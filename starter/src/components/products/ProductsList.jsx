@@ -23,8 +23,8 @@ const ProductsList = () => {
       <Container className="product-list rounded-4 my-4 p-3">
         <Row className="g-3 justify-content-center">
 
-        {products.filter((item)=>item.title.toLowerCase().includes(value.toLowerCase().trim()) && (click.toLowerCase()==="all" ? item : item.category.toLowerCase()===click.toLowerCase())).map((item)=>(
-          <Col>
+        {products.filter((item)=>item.title.toLowerCase().includes(value.toLowerCase().trim()) && (click.toLowerCase()==="all" ? item : item.category.toLowerCase()===click.toLowerCase())).map((item, id)=>(
+          <Col key={id}>
           <ProductCard{...item}/>
           </Col>
           ))}
